@@ -25,17 +25,3 @@ serviceAccount:
 service:
   type: ClusterIP
   port: 80
-
-# Ingress Configuration
-ingress:
-  className: eks-auto-alb
-  annotations:
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/scheme: internet-facing
-  path: /
-  pathType: Prefix
-
-# IngressClass Configuration
-ingressClass:
-  name: eks-auto-alb
-  controller: eks.amazonaws.com/alb
